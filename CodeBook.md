@@ -20,7 +20,13 @@ The data was collated in support of **International Workshop of Ambient Assisted
 
 ### Transformations
 
+The following transformations were applied to the data
 
+* **Merge training and test datasets** (append one on to the end of the other)
+* **Extract columns related to Mean and SD values** (via grep string matching)
+* **Tidy variable names** (remove invalid characters)
+* **Insert actual activity names** (replace index values with descriptive names)
+* **Collate tidy data** (produce matrix of mean column value for each permutation of Activity & Subject)
 
 ### Data Dictionary 
 
