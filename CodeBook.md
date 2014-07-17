@@ -30,3 +30,5 @@ The following transformations were applied to the data
 
 ### Data Dictionary 
 
+The high level overview of the data is presented in (README.txt)[README.txt], with detail on the data measurements in 
+(features_info.txt)[features_info.txt]
