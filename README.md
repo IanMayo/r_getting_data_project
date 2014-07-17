@@ -1,5 +1,3 @@
-# READ ME
-
 # Instructions
 
 All code for this project is in the [run_analysis.R](run_analysis.R) script.
