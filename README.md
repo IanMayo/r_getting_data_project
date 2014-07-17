@@ -8,3 +8,4 @@ All code for this project is in the [run_analysis.R](run_analysis.R) script.
 
 The script will download and unpack the project data, process that data, then output a results file titled **averages_per_activity_and_subject.csv**
 
+More information is available in the [CodeBook](CodeBook.md)
