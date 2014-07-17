@@ -16,6 +16,7 @@ if(!file.exists(resFolder))
     unzip <- unzip(datasetUrl, exdir = ".")
 }
 
+#####################################################################
 ## 1. Merge the training and test datasets into one data set
 
 ## cache the x data - since it takes so long to process
@@ -31,6 +32,7 @@ yData <- rbind(read.table("UCI HAR Dataset/train/y_train.txt"), read.table("UCI 
 message("reading & binding subject data")
 subjectData <- rbind(read.table("UCI HAR Dataset/train/subject_train.txt"), read.table("UCI HAR Dataset/test/subject_test.txt"))
 
+#######################################################################
 ## 2. extract the columns that represent mean and SD   
 
 ## start with the column names
@@ -45,21 +47,21 @@ trimmedXData <- xData[, required_features]
 ## use the nice new tidy names
 names(trimmedXData) <- featureTable[required_features, 2]
 
-## put the columns into lower case
-#names(trimmedXData) <- tolower(names(trimmedXData)) 
-
 ## remove the brackets from the column names
 names(trimmedXData) <- gsub("\\(|\\)", "", names(trimmedXData))
 
+##################################################################
 ## 3. Insert the descriptive activity names
 activities_names <- read.table("UCI HAR Dataset/activity_labels.txt")
 yData[,1] = activities_names[yData[,1], 2]
 names(yData) <- "Activity"
 
+######################################################################
 ## 4. label the dataset with the merged set of subject and activity names
 names(subjectData) <- "Subject"
 collatedData <- cbind(subjectData, yData, trimmedXData)
 
+#########################################################################
 ## 5. output the new dataset that includes the average of each variable for each activity and subject
 
 ## create tall table of all permutations
